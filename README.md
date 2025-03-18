@@ -1,0 +1,1 @@
+Develop an AI agent using SmolAgent Framework that uses ReAct(Reason - Act) feedback system with deep research capabilities that can be easily used by users to tackle real world problems in a faster method.
