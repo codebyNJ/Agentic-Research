@@ -19,7 +19,7 @@ This project integrates [Langfuse](https://langfuse.com/) with [Smolagents](http
 
 ### Demo
 
-[!Process 1](sample/1.png)
-[!Process 2](sample/2.png)
-[!Process 3](sample/3.png)
-[!Process 4](sample/4.png)
+![Process 1](sample/1.png)
+![Process 2](sample/2.png)
+![Process 3](sample/3.png)
+![Process 4](sample/4.png)
