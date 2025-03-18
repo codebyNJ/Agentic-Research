@@ -1,16 +1,17 @@
 import os
 import base64
 
-LANGFUSE_PUBLIC_KEY="pk-..."
-LANGFUSE_SECRET_KEY="sk-..."
+#Langfuse API Key
+
+LANGFUSE_PUBLIC_KEY="pk-lf-06fd2f47-a6be-4053-adbf-a54a70da4011"
+LANGFUSE_SECRET_KEY="sk-lf-6330a411-d6a0-4c0a-a485-a5b11eb46a80"
 LANGFUSE_AUTH=base64.b64encode(f"{LANGFUSE_PUBLIC_KEY}:{LANGFUSE_SECRET_KEY}".encode()).decode()
 
-#os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "https://cloud.langfuse.com/api/public/otel" # EU data region
 os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "https://us.cloud.langfuse.com/api/public/otel" # US data region
 os.environ["OTEL_EXPORTER_OTLP_HEADERS"] = f"Authorization=Basic {LANGFUSE_AUTH}"
 
 # your Hugging Face token
-os.environ["HF_TOKEN"] = "hf_..."
+os.environ["HF_TOKEN"] = "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"
 
 from opentelemetry.sdk.trace import TracerProvider
 
@@ -31,6 +32,7 @@ from smolagents import (
     HfApiModel,
 )
 
+#model name
 model = HfApiModel(
     model_id="Qwen/Qwen2.5-Coder-32B-Instruct"
 )
@@ -48,7 +50,7 @@ manager_agent = CodeAgent(
     managed_agents=[search_agent],
 )
 manager_agent.run(
-    "How can Langfuse be used to monitor and improve the reasoning and decision-making of smolagents when they execute multi-step tasks, like dynamically adjusting a recipe based on user feedback or available ingredients?"
+    "Renewable energy for urban areas"
 )
 
 #manager_agent.replay() to replay the pervious run of the agent.
