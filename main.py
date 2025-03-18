@@ -1,8 +1,8 @@
 import os
 import base64
 
-LANGFUSE_PUBLIC_KEY="pk-lf-06fd2f47-a6be-4053-adbf-a54a70da4011"
-LANGFUSE_SECRET_KEY="sk-lf-6330a411-d6a0-4c0a-a485-a5b11eb46a80"
+LANGFUSE_PUBLIC_KEY="pk-..."
+LANGFUSE_SECRET_KEY="sk-..."
 LANGFUSE_AUTH=base64.b64encode(f"{LANGFUSE_PUBLIC_KEY}:{LANGFUSE_SECRET_KEY}".encode()).decode()
 
 #os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "https://cloud.langfuse.com/api/public/otel" # EU data region
@@ -10,7 +10,7 @@ os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "https://us.cloud.langfuse.com/api/p
 os.environ["OTEL_EXPORTER_OTLP_HEADERS"] = f"Authorization=Basic {LANGFUSE_AUTH}"
 
 # your Hugging Face token
-os.environ["HF_TOKEN"] = "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"
+os.environ["HF_TOKEN"] = "hf_..."
 
 from opentelemetry.sdk.trace import TracerProvider
 
